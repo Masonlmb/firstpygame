@@ -16,7 +16,7 @@ class Alien(Sprite):
 
         #load alien pic and set its rect
 
-        self.image = pygame.image.load('images/aim.png')
+        self.image = pygame.image.load('images/aim.bmp')
         self.rect = self.image.get_rect()
 
 
@@ -34,4 +34,21 @@ class Alien(Sprite):
 
         self.screen.blit(self.image, self.rect)
 
+
+    def check_edges(self):
+        '''if going right return 1 if going left returen -1'''
+        screen_rect = self.screen.get_rect()
+        if self.rect.right >= screen_rect.right:
+            return True
+        elif self.rect.left <= screen_rect.left:
+            return True
+
+
+
+    def update(self):
+        '''move alien to right'''
+
+
+        self.x += self.ai_settings.alien_speed_factor * self.ai_settings.fleet_direction
+        self.rect.x = self.x
 

@@ -9,8 +9,8 @@ class Ship():
         self.screen = screen
         self.ai_settings = ai_settings
         #load ship image
-        self.image = pygame.image.load('images/ship.png')
-        self.image = pygame.transform.scale(self.image, (80, 120))
+        self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.transform.scale(self.image, (60, 90))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
@@ -41,4 +41,6 @@ class Ship():
 
         self.screen.blit(self.image,self.rect)
 
-
+    def center_ship(self):
+        '''put ship in the middle'''
+        self.center = self.screen_rect.centerx
