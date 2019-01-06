@@ -7,7 +7,9 @@ class GameStats():
         self.ai_settings = ai_settings
         self.reset_stats()
 
-        self.game_active = True
+        # set game unactive at begining
+        
+        self.game_active = False
 
 
 
